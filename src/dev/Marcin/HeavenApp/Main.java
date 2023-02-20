@@ -1,5 +1,6 @@
 package dev.Marcin.HeavenApp;
 
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -67,7 +68,7 @@ public class Main {
         for (HeavenlyBody planet : planets) {
             System.out.println("\t" + planet.getKey());
         }
-        HeavenlyBody body = solarSystem.get(HeavenlyBody.makeKey("Mars", HeavenlyBody.BodyTypes.PLANET));
+        HeavenlyBody body = solarSystem.get(HeavenlyBody.makeKey("Mars", HeavenlyBody.BodyTypes.PLANET  ));
         System.out.println(" Moons of " + body.getKey());
         for (HeavenlyBody jupiterMoon : body.getSatellites()) {
             System.out.println("\t " + jupiterMoon.getKey());
@@ -93,6 +94,16 @@ public class Main {
         System.out.println(earth1.equals(pluto));
         System.out.println(pluto.equals(earth1));
 
+
+        solarSystem.put(pluto.getKey(), pluto);
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.PLANET)));
+        System.out.println(solarSystem.get(HeavenlyBody.makeKey("Pluto", HeavenlyBody.BodyTypes.DAWRF_PLANET)));
+
+        System.out.println();
+        System.out.println("The solar system contains: ");
+        for(HeavenlyBody heavenlyBody : solarSystem.values()){
+            System.out.println(heavenlyBody);
+        }
 
 
 
